@@ -1,0 +1,3 @@
+backbone,main_task_count,expected_tasks,main_rows,expected_main_rows,tasks_all_four_methods,pfg_nw_candidate_rows,expected_candidate_rows,tasks_with_12_pfg_candidates,task_keys_5shot,candidate_validation_finite,protocol_audit_rows,pca_components_unique
+DINOv2-Small,60,60,240,240,60,720,720,60,20,True,60,64
+ResNet-50,60,60,240,240,60,720,720,60,20,True,60,64

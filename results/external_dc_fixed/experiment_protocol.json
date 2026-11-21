@@ -1,0 +1,34 @@
+{
+  "experiment": "DC-Adapted-Oxford102",
+  "created_utc": "2026-11-20T09:35:10.214293+00:00",
+  "run_full": true,
+  "configs": {
+    "n_neighbors": 2,
+    "synthetic_per_support": 20,
+    "fixed_lr_C": 1.0,
+    "cov_relative_ridge": 0.21,
+    "pca_dim": 64,
+    "shots": [
+      5,
+      10,
+      20
+    ],
+    "seeds": [
+      137,
+      139,
+      149,
+      151,
+      157,
+      163,
+      167,
+      173,
+      179,
+      181
+    ]
+  },
+  "source": "Oxford Flowers102 (independent flower-species labels)",
+  "protocol": "cross-domain base/target. Method adaptation; not original DC benchmark protocol",
+  "score_source": "test_ columns only",
+  "target_model_retraining": false,
+  "causal_caveat": "DC-Adapted uses external labeled base data; CA-PFG does not."
+}

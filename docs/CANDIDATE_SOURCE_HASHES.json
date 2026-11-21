@@ -1,0 +1,12 @@
+{
+  "candidate_archive": "Candidate.zip",
+  "candidate_archive_sha256": "444f4f73aefd3a5b118960c6938dcf1e4a46427714bf240759b03effd4406a46",
+  "contents": {
+    "NB11_ResNet50_candidate_VALIDATION.csv": "f4a6bb265e6c6cd3079284705699e255f52e754b3a813eedb8de756cd9bc7d0e",
+    "NB11_completion_report.json": "730a8c6367a00cf5eec4007fbeb14ae8151198f141624addc0506f04f8ec443f",
+    "NB10_DINOv2_candidate_VALIDATION.csv": "67d717fd684bd1aae8268443ab2ce7e4d50364c1ef6a39b6bf47739c3670841a",
+    "NB11_frozen_config.json": "d964f74982a203c5017192af0f392ee63d00fd26d43fcbd49c93f3698a05172a",
+    "NB11_frozen_config_hash.txt": "2460884272eccfc05b20621789047df089c88af2fc1c7ccfa65b3e7c87d9f2c7"
+  },
+  "status": "candidate-level validation-only output; supplied by authors, schema/coverage checked; not refit from raw data"
+}

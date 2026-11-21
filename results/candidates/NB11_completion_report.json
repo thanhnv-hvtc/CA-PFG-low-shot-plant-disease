@@ -1,0 +1,8 @@
+{
+  "expected_tasks": 60,
+  "completed_unique_tasks": 60,
+  "all_protocol_pass": true,
+  "backbone": "torchvision_resnet50",
+  "weights_name": "IMAGENET1K_V2",
+  "config_hash": "a9ecac0d0d7da647f44cdcd5a749135f26bc31a9f64e9a2d08b0c93ff8398de4"
+}

@@ -1,0 +1,28 @@
+{
+  "analysis": "Reviewer Major Issue 1 - DC C sensitivity",
+  "experiment": "DC-Adapted-Oxford102",
+  "backbone": "ResNet-50",
+  "run_full": true,
+  "task_count": 60,
+  "C_grid": [
+    0.01,
+    0.1,
+    1.0,
+    10.0,
+    100.0
+  ],
+  "selectors": {
+    "F1-only": "validation Macro-F1 max; lower C tie-break",
+    "F1-NLL-ECE": "validation F1 tolerance 0.002; NLL 0.01; ECE 0.01; lower C tie-break"
+  },
+  "external_source": "Oxford Flowers102, labeled independent source classes",
+  "test_access": "selected candidates only; no test labels used during selection",
+  "caution": "adapted cross-domain DC; not original ICLR benchmark; no image hash overlap audit",
+  "fixed_attributes": {
+    "PCA_dim": 64,
+    "nearest_base_classes": 2,
+    "synthetic_per_support": 20,
+    "cov_relative_ridge": 0.21,
+    "LR_max_iter": 1500
+  }
+}

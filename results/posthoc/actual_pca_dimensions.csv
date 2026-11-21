@@ -1,0 +1,13 @@
+backbone,dataset,K,n_tasks,min_pca,max_pca,unique_pca
+DINOv2-Small,plantdoc,5,10,64,64,64
+DINOv2-Small,plantdoc,10,10,64,64,64
+DINOv2-Small,plantdoc,20,10,64,64,64
+DINOv2-Small,plantvillage,5,10,64,64,64
+DINOv2-Small,plantvillage,10,10,64,64,64
+DINOv2-Small,plantvillage,20,10,64,64,64
+ResNet-50,plantdoc,5,10,64,64,64
+ResNet-50,plantdoc,10,10,64,64,64
+ResNet-50,plantdoc,20,10,64,64,64
+ResNet-50,plantvillage,5,10,64,64,64
+ResNet-50,plantvillage,10,10,64,64,64
+ResNet-50,plantvillage,20,10,64,64,64

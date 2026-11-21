@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this code or result archive, please cite the CA-PFG manuscript (bibliographic details pending acceptance)."
+title: "CA-PFG: Calibration-Aware Probabilistic Feature Generation with Normalized Synthetic Influence Control for Low-Shot Plant Disease Classification"
+type: software
+authors:
+  - family-names: Nguyen
+    given-names: Van Thanh
+    orcid: https://orcid.org/0009-0000-5741-7972
+  - family-names: Phan
+    given-names: Phuoc Long
+    orcid: https://orcid.org/0009-0002-4268-7253

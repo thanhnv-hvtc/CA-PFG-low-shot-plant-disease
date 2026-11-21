@@ -1,0 +1,56 @@
+{
+  "experiment_version": "CAPFG11_resnet50_backbone_robustness",
+  "backbone_name": "torchvision_resnet50",
+  "weights_name": "IMAGENET1K_V2",
+  "feature_dimension": 2048,
+  "extraction_batch_size": 64,
+  "extraction_num_workers": 2,
+  "extraction_use_amp": true,
+  "datasets": [
+    "plantdoc",
+    "plantvillage"
+  ],
+  "k_values": [
+    5,
+    10,
+    20
+  ],
+  "confirmatory_seeds": [
+    137,
+    139,
+    149,
+    151,
+    157,
+    163,
+    167,
+    173,
+    179,
+    181
+  ],
+  "smoke_dataset": "plantdoc",
+  "smoke_k": 5,
+  "smoke_seed": 137,
+  "pca_dimension": 64,
+  "pca_whiten": false,
+  "pooled_covariance_weight": 0.25,
+  "gaussian_jitter": 1e-06,
+  "synthetic_multiplier": 20,
+  "use_antithetic_sampling": true,
+  "logreg_c_grid": [
+    10.0,
+    30.0,
+    100.0
+  ],
+  "synthetic_total_weight_grid": [
+    0.125,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "max_iter_logreg": 5000,
+  "f1_tolerance": 0.002,
+  "nll_tolerance": 0.01,
+  "ece_tolerance": 0.01,
+  "ece_bins": 15,
+  "numerical_tolerance": 1e-06
+}

@@ -1,0 +1,12 @@
+{
+  "dataset": "oxford_flowers102",
+  "n_images": 8189,
+  "n_species": 102,
+  "min_per_species": 40,
+  "max_per_species": 258,
+  "feature_dim": 2048,
+  "feature_sha256": "d9f1b2b64739e8b5a7323ef1b52e9a066f4f76330878ca81d6ffea3ca18d7046",
+  "target_image_hash_overlap_checked": false,
+  "source_and_target_label_spaces_are_distinct_by_semantics": true,
+  "source_base_is_cross_domain": true
+}

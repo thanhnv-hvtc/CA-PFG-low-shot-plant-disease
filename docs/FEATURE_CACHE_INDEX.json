@@ -1,0 +1,75 @@
+{
+  "about": "Feature arrays are NOT contained in the public source-code ZIP. Keep original caches separately; metadata and manifest row order are authoritative.",
+  "manifest_original_sha256": "7404cffcc415b21ebb77fe17e2276c07f2095f891d43d6b2158ea6ed31114f7a",
+  "oxford_original_metadata_sha256": "55c5212af4c31b1f223451bc936a08f8dea92656557a1f42d6b3712f020e91aa",
+  "archives": {
+    "features_DINOv2.rar": {
+      "sha256": "8e6df580a59acdc4c0e884c0686795a158a31981565cbbf8968ef3838b2d3342"
+    },
+    "features_ResNet50.zip": {
+      "sha256": "ac381149b9e273570fd649d0645429296a3a740977b64ebcf4aa12c7cdcb1530"
+    }
+  },
+  "features": {
+    "plantdoc_DINOv2": {
+      "archive": "features_DINOv2.rar",
+      "member": "features/dinov2_small/plantdoc/plantdoc_features.npy",
+      "shape": [
+        8887,
+        384
+      ],
+      "dtype": "float32",
+      "sha256": "7659c87115f5679367f3def9d86b96c530c6848a98736ded647c2a7fd29007e9"
+    },
+    "plantvillage_DINOv2": {
+      "archive": "features_DINOv2.rar",
+      "member": "features/dinov2_small/plantvillage/plantvillage_features.npy",
+      "shape": [
+        54284,
+        384
+      ],
+      "dtype": "float32",
+      "sha256": "360f74a8ce2d6c1b4678c30cffd422f1b09019217b1fb6e2eb77788fbeaf8e4a"
+    },
+    "plantdoc_ResNet50": {
+      "archive": "features_ResNet50.zip",
+      "member": "features_ResNet50/plantdoc_resnet50_features.npy",
+      "shape": [
+        8887,
+        2048
+      ],
+      "dtype": "float32",
+      "sha256": "01845ff963f01027b120210fbc4871ae1fb34890a6f4cdf66c423b3ac2ac88d9"
+    },
+    "plantvillage_ResNet50": {
+      "archive": "features_ResNet50.zip",
+      "member": "features_ResNet50/plantvillage_resnet50_features.npy",
+      "shape": [
+        54284,
+        2048
+      ],
+      "dtype": "float32",
+      "sha256": "cfc4b34a0b08c369483db66c8dc1c6438babcf473aeabd539a6983d3734eae30"
+    },
+    "oxford102_ResNet50": {
+      "filename": "oxford102_resnet50_features.npy",
+      "shape": [
+        8189,
+        2048
+      ],
+      "dtype": "float32",
+      "sha256": "d9f1b2b64739e8b5a7323ef1b52e9a066f4f76330878ca81d6ffea3ca18d7046"
+    }
+  },
+  "path_policy": "All published metadata paths are relative; original source files contain Kaggle runtime paths and are not published.",
+  "checks": {
+    "plantdoc_resnet50_metadata_rows": 8887,
+    "plantdoc_resnet50_meta_original_sha256": "6f4b26f507cbc33257b50d861759514fc63c4577db5d94ea1973501621785a07",
+    "plantvillage_resnet50_metadata_rows": 54284,
+    "plantvillage_resnet50_meta_original_sha256": "798a47c3bd684a43b688ca8971b80f5e0a6abb52514658e11dbd5e06d62620e7",
+    "plantdoc_dino_metadata_rows": 8887,
+    "plantvillage_dino_metadata_rows": 54284
+  },
+  "source_test_overlap_hashed": false,
+  "manifest_dino_resnet_image_order_audited": true
+}
