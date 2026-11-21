@@ -12,6 +12,10 @@ The validated original files provided by the authors are:
 
 SHA-256 values are in `FEATURE_CACHE_INDEX.json`.
 
+**Kaggle feature dataset:** https://www.kaggle.com/datasets/nguynvnthanhhvtc/capfg-feature-caches
+
+**Important:** This link was supplied by the authors; visibility and actual file layout still require verification. The `scripts/verify_kaggle_feature_caches.py` script searches nested directories to accommodate differing Kaggle mount layouts.
+
 ## Layout to attach to Kaggle
 
 Place files in a Kaggle Dataset (read-only input) or equivalent accessible location:
@@ -40,3 +44,21 @@ The `splits/manifest_split.csv` and sanitized metadata in this repository preser
 Original authors' local Kaggle absolute paths are intentionally excluded from the public `splits/` and `metadata/` directories. This is a **portable metadata copy**, not byte-for-byte the same as the author's original CSV files. See `FEATURE_CACHE_INDEX.json` for original-file checksums.
 
 The Oxford `image_path` values have the form `jpg/image_XXXXX.jpg` and refer to files inside the official Oxford Flowers 102 data directory. CA-PFG does not use Oxford-derived statistics; Oxford is only for the DC-Adapted baseline.
+
+## Quick Kaggle inspection
+
+In a Kaggle Notebook with the dataset attached, paste:
+
+```python
+from pathlib import Path
+import numpy as np
+for name in [
+    "plantdoc_features.npy", "plantvillage_features.npy",
+    "plantdoc_resnet50_features.npy", "plantvillage_resnet50_features.npy",
+    "oxford102_resnet50_features.npy",
+]:
+    matches=list(Path("/kaggle/input").rglob(name))
+    print(name, [(str(p), np.load(p, mmap_mode="r").shape) for p in matches])
+```
+
+The command reports paths and shapes only; it does not establish the provenance of the arrays. For that, compare SHA-256 hashes with `FEATURE_CACHE_INDEX.json`.

@@ -11,10 +11,26 @@ This repository contains the **research notebook sources supplied for this relea
 |---|---|---|
 | A. Verify Tables 3, 4, 6 and task counts | Bundled CSVs | **Ready**; run `python scripts/verify_release.py` |
 | B. Regenerate Figures 2–3 | Bundled `results/test/main_task_metrics_TEST_ONLY.csv` and Notebook 16 | **Ready** in Kaggle; ready-to-use PNGs in `figures/` |
-| C. Re-run all low-shot tasks from frozen features | Notebook 10/11, split manifest and `.npy` caches | **Manifest and portable metadata verified; external `.npy` archives are held by authors and must be attached separately to re-run the tasks** |
+| C. Re-run all low-shot tasks from frozen features | Notebook 10/11, split manifest and `.npy` caches | **Manifest and portable metadata verified; feature caches are linked via the author-provided Kaggle Dataset (access/file inventory requires a public check)** |
 | D. End-to-end re-extraction from original images | Raw datasets, original image-path metadata, model versions | Requires downloading data from its rights holders and following notebook instructions |
 
 This GitHub source-code repository does not itself contain the large `.npy` feature arrays; attach the author-held caches separately. The **original manifest has been obtained and audited**, and its portable public representation in `splits/manifest_split.csv` retains the exact sample IDs, class IDs, splits and SHA-1 values while omitting Kaggle-specific absolute paths. Full experimental reruns using the published portable files have **not yet been tested in a fresh Kaggle session**.
+
+## Feature caches (hosted separately on Kaggle)
+
+**Author-provided dataset:** [https://www.kaggle.com/datasets/nguynvnthanhhvtc/capfg-feature-caches](https://www.kaggle.com/datasets/nguynvnthanhhvtc/capfg-feature-caches)
+
+The large `.npy` arrays for PlantDoc and PlantVillage (DINOv2-Small and ResNet-50), and the Oxford Flowers 102 ResNet-50 auxiliary cache, are intentionally stored outside GitHub. The intended cache inventory, dimensions, and SHA-256 checksums are documented in `docs/FEATURE_CACHE_INDEX.json`. **The dataset's public visibility, exact directory layout and uploaded file hashes have not yet been independently verified.**
+
+To inspect the mounted Kaggle Dataset without modifying the research data, create a new Kaggle Notebook, use **Add Input** to attach `capfg-feature-caches`, add `docs/FEATURE_CACHE_INDEX.json` if running the repository script outside the repository, and run:
+
+```bash
+python scripts/verify_kaggle_feature_caches.py --root /kaggle/input
+# Optional strict check (reads all five large arrays):
+python scripts/verify_kaggle_feature_caches.py --root /kaggle/input --full-hash
+```
+
+See `docs/FEATURE_INPUTS_GUIDE.md` for expected file names. Do not re-sort feature rows when using the task manifests. The raw original image datasets remain under their respective source providers' terms.
 
 ## Minimal verification (no Kaggle GPU required)
 
@@ -60,7 +76,7 @@ Figures 2–3 and Table 6 are post-revision outputs. Avoid treating repeated sup
 
 Consult `docs/MISSING_BEFORE_FULL_REPRODUCTION.md` for remaining conditional items, verify the source dataset licenses and add a license only after the authors choose one. Source modules reconstructed from the manuscript were deliberately excluded from this archive because exact parity with successful notebooks has not yet been demonstrated. The **actual notebook code** is present.
 
-Repository URL and publication DOI: **to be added only after the GitHub repository and manuscript metadata exist**.
+Public GitHub repository URL and publication DOI: **add only after they exist and have been verified**. The repository is currently being prepared for public release.
 
 ## Verified original inputs (revision v2)
 
@@ -72,7 +88,7 @@ This release now includes:
 - `docs/FEATURE_CACHE_INDEX.json`: original feature `.npy` member paths, shapes and SHA-256 checksums, plus source archive hashes;
 - `scripts/verify_input_metadata.py`: checks that the manifest and all five metadata files have correct labels, splits and ordering.
 
-**Arrays remain separate from the Git repository.** The authors have supplied source archives `features_DINOv2.rar` and `features_ResNet50.zip` as well as `oxford102_resnet50_features.npy`; publish them only via a separately reviewed and clearly licensed research-artifact release, if permitted. To reproduce the original tasks, attach the `.npy` arrays with their unmodified row ordering.
+**Arrays remain separate from the Git repository.** The author has created a Kaggle Dataset for the feature caches. Its access permissions, license, and five file hashes should be checked before citing it as a public reproduction artifact. To reproduce the original tasks, attach the `.npy` arrays with their unmodified row ordering.
 
 No Oxford-target image-level duplicate audit has been completed, and no end-to-end fresh model re-run is claimed.
 
@@ -87,9 +103,8 @@ See `docs/CANDIDATE_RESULTS_PROVENANCE.md` and run
 
 ## External feature bundle (separate from GitHub)
 
-The large arrays are prepared as a **separate** `CA-PFG_Frozen_Features_Kaggle_External.zip`.
-Upload this to an approved Kaggle Dataset or Google Drive and verify public
-access before adding a link. It contains no raw dataset images. The fact that
+The authors have provided a Kaggle Dataset URL: [https://www.kaggle.com/datasets/nguynvnthanhhvtc/capfg-feature-caches](https://www.kaggle.com/datasets/nguynvnthanhhvtc/capfg-feature-caches).
+**Public accessibility and the exact file listing have not yet been independently verified**; see `docs/EXTERNAL_DOWNLOAD_LINKS.md` and run the cache-verification script in a Kaggle notebook. If the dataset is Private, switch sharing to Public only after checking data-use terms and removing unnecessary raw source data. It contains no raw dataset images. The fact that
 feature arrays were generated does not in itself grant a right to redistribute
 them; authors must confirm dataset-source terms. See
 `docs/EXTERNAL_FEATURES_UPLOAD_VI.md`, `docs/EXTERNAL_DOWNLOAD_LINKS.md`
